@@ -1,0 +1,186 @@
+/* CSS for lamilioa.org/oioa/ */
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@400;600&display=swap');
+
+:root {
+    --background-color: #32383f;
+    --darker-background-color: #2f343b;
+    --selection-color: #44525f;
+    --border: #838db1;
+    --accent-color: #3d7e65;
+    --accent-blue: #bfc5f8;
+    --subtle-color: #b6b8bd;
+    --text-color: #dee0e4;
+    --font-family: 'Bitter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --font-size: 1.7rem;
+    --max-width: 668px;
+    --font-weight: 400;
+    --font-weight-bold: 600;
+    --result-columns: 1;
+    --result-gap: 2.4rem;
+}
+
+@media(min-width: 576px) {
+    :root {
+        --result-columns: 2;
+    }
+}
+
+@media(min-width: 768px) {
+    :root {
+        --max-width: 862px;
+        --result-columns: 3;
+        --result-gap: 3rem;
+    }
+}
+
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    line-height: 1.5;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    padding: 2rem 1rem;
+    margin: 0 auto;
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+    background: var(--background-color);
+    color: var(--text-color);
+    max-width: var(--max-width);
+    font-weight: var(--font-weight);
+    line-height: 1.2;
+}
+
+::selection {
+    background-color: var(--selection-color);
+}
+
+h1, h2, h3, h4, p, div, blockquote, figure, details, ul, ol, table, strong, em {
+    font-size: 100%;
+    font-weight: normal;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: var(--accent-color);
+}
+
+a, input, textarea, button {
+    transition: outline .1s ease-in-out;
+}
+
+a:focus, input:focus, textarea:focus, button:focus {
+    outline: 3px solid var(--accent-color);
+}
+
+header {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+main {
+    margin-block: 0 2rem;
+}
+
+footer {
+    font-size: 80%;
+    color: var(--subtle-color);
+}
+
+header h1 {
+    font-size: 150%;
+    font-weight: var(--font-weight-bold);
+    margin-block: 0 .5rem;
+}
+
+.search {
+    margin-block: 0 1.5rem;
+}
+
+.search input[type="text"] {
+    font-family: var(--font-family);
+    font-size: 80%;
+    padding: .5rem;
+    width: 256px;
+    max-width: 100%;
+}
+
+.search input[type="text"]::selection {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+}
+
+.search details {
+    margin-block: 0 .5rem;
+}
+
+.search details summary {
+    user-select: none;
+    color: var(--subtle-color);
+}
+
+.search details[open] summary {
+    color: white;
+}
+
+.search .search-input-options {
+    list-style: none;
+    border-inline-start: 2px solid var(--text-color);
+    margin-block: 0 1rem;
+    padding-inline: 1.5rem 0;
+}
+
+.results-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(var(--result-columns), minmax(0, 1fr));
+    row-gap: var(--result-gap);
+    column-gap: var(--result-gap);
+}
+
+.results-list > li {
+    border: solid var(--border);
+    border-width: 0 0 2px 2px;
+    padding: 1rem 1rem 1.6rem 1.6rem;
+    border-radius: 8px;
+    background: var(--darker-background-color);
+}
+
+.results-list h2 {
+    font-size: 120%;
+    font-weight: var(--font-weight-bold);
+    color: var(--accent-blue);
+    margin-block-end: .4rem;
+}
+
+.results-list .examples {
+    margin-block-start: .8rem;
+    list-style: disc;
+    padding-inline-start: 2.4rem;
+    font-size: 85%;
+    display: flex;
+    flex-flow: column nowrap;
+    row-gap: .4rem;
+}
+
+.results-list .examples li .example-en,
+.results-list .examples li .example-ll {
+    display: block;
+}
+
+.results-list .examples li .example-en {
+    font-style: italic;
+    color: var(--subtle-color);
+}
+
+span.regex-match {
+    background: var(--accent-color);
+}

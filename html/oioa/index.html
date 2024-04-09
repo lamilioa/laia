@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="oioa lioa">
+    <meta property="og:description" content="lo hina ko loi ni oioa na lo lami lioa">
+    <meta property="og:image" content="https://lamilioa.org/assets/images/ll-icon.png">
+    <meta name="theme-color" content="#2EA090">
+    <link rel="stylesheet" href="/assets/css/oioa.css" type="text/css">
+    <link rel="shortcut icon" href="/assets/images/ll-icon.png" type="image/png">
+    <title>oioa lioa</title>
+</head>
+<body>
+<header>
+    <h1>oioa lioa</h1>
+    <nav class="pagination" id="pagination"></nav>
+</header>
+<main>
+    <section class="search">
+        <div class="search-input">
+            <details>
+                <summary>search by</summary>
+                <ul class="search-input-options">
+                    <li>
+                        <input type="checkbox" name="search_by_head" id="search_by_head" data-search-by="head" checked>
+                        <label for="search_by_head">headword</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="search_by_definition" id="search_by_definition" data-search-by="definition" checked>
+                        <label for="search_by_definition">definition</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="search_by_example_ll" id="search_by_example_ll" data-search-by="exampleLl">
+                        <label for="search_by_example_ll">example (ll)</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="search_by_example_en" id="search_by_example_en" data-search-by="exampleEn">
+                        <label for="search_by_example_en">example (en)</label>
+                    </li>
+                </ul>
+            </details>
+            <input type="text" name="search_query" id="search_query" placeholder="search...">
+        </div>
+    </section>
+    <section class="results">
+        <div class="results-status">loading...</div>
+        <ul class="results-list"></ul>
+    </section>
+</main>
+<footer>
+    <p>ka haika ni pali hina mo miko maolana · si hali li oapo ioli nai la io ioki mo hai</p>
+</footer>
+<script type="module" src="/assets/js/oioa.js"></script>
+</body>
+</html>
