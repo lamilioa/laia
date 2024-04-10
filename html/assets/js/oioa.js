@@ -77,10 +77,10 @@ class OioaLioa {
                         }
                     }
                     if (this.searchBy.definition) {
-                        if (wholeExp.test(entry.definition)) {
+                        if (wholeExp.test(definition)) {
                             match = true;
                             whole = true;
-                        } else if (entry.definition.includes(this.query)) {
+                        } else if (definition.includes(this.query)) {
                             match = true;
                         }
                     }
@@ -102,7 +102,7 @@ class OioaLioa {
                     return obj;
                 }, [])
                 .sort((a, b) => {
-                    if (a.whole == b.whole) return b.key - a.key;
+                    if (a.whole === b.whole) return b.key - a.key;
                     return a.whole ? -1 : 1;
                 });
         } else {
