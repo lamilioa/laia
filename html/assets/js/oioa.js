@@ -29,7 +29,7 @@ class OioaLioa {
     }
 
     fetchWords() {
-        fetch("https://sako.lamilioa.org/word")
+        fetch("https://raw.githubusercontent.com/lamilioa/lami/refs/heads/main/dictionary.json")
             .then((res) => {
                 if (res.error) {
                     throw error();
@@ -37,7 +37,7 @@ class OioaLioa {
                 return res.json();
             })
             .then((res) => {
-                this.words = res;
+                this.words = res.dictionary;
                 this.update();
                 this.status.innerHTML = "";
             })
